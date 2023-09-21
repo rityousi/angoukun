@@ -61,10 +61,10 @@ u = 1
 solution = solve_linear_diophantine(s, t, u)
 if solution:
         x, y = solution
-        print(f"整数解: x = {x}, y = {y}")
+        st.write(f"整数解: x = {x}, y = {y}")
 else:
-        print('解なし')
+        st.write('解なし')
         
 Pa = pow(code_a,x,n)
 Pb = pow(code_b,x,n)
-print(Pa,Pb)
+st.write(Pa,Pb)
