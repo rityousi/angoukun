@@ -24,6 +24,8 @@ def main():
     if st.button("素因数分解開始"):
         try:
             factors = sympy.factorint(number_to_factorize)
+            flen = len(factors)
+            st.write(flen)
             st.write(f"素因数分解結果: {factors}")
         except Exception as e:
             st.write(f"エラー: {e}")
