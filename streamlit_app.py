@@ -4,16 +4,33 @@ import streamlit as st
 # ページ設定（タブに表示されるタイトル、表示幅）
 st.set_page_config(page_title="タイトル", layout="wide")
 
-import sympy
+import streamlit as st
+import time
+import math
+
+ 
+
+def factorize(n):
+    factors = []
+    while n % 2 == 0:
+        factors.append(2)
+        n //= 2
+    for i in range(3, int(math.sqrt(n)) + 1, 2):
+        while n % i == 0:
+            factors.append(i)
+            n //= i
+    if n > 1:
+        factors.append(n)
+    return factors
 
  
 
 def main():
-    st.title("大きな数の素因数分解アプリ")
+    st.title("素因数分解時間計測アプリ")
 
  
 
-    st.write("このアプリは、与えられた整数の素因数分解を行います。")
+    st.write("このアプリは、与えられた整数の素因数分解を行い、所要時間を計測します。")
 
  
 
@@ -21,14 +38,16 @@ def main():
 
  
 
-    if st.button("素因数分解開始"):
-        try:
-            factors = sympy.factorint(number_to_factorize)
-            flen = len(factors)
-            st.write(flen)
-            st.write(f"素因数分解結果: {factors}")
-        except Exception as e:
-            st.write(f"エラー: {e}")
+    if st.button("計測開始"):
+        start_time = time.time()
+        factors = factorize(number_to_factorize)
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+
+ 
+
+        st.write(f"素因数分解結果: {factors}")
+        st.write(f"素因数分解にかかる時間: {elapsed_time:.4f} 秒")
 
  
 
