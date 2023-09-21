@@ -27,6 +27,8 @@ def main():
             flen = len(factors)
             st.write(flen)
             st.write(f"素因数分解結果: {factors}")
+            st.write(factors[0])
+            st.write(factors[1])
         except Exception as e:
             st.write(f"エラー: {e}")
 
