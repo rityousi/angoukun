@@ -5,27 +5,66 @@ import streamlit as st
 st.set_page_config(page_title="タイトル", layout="wide")
 
 # タイトルを設定
-st.title('Streamlitのサンプルアプ')
+st.title('時間計測')
 
-# テキスト入力ボックスを作成し、ユーザーからの入力を受け取る
-user_input = st.text_input('あなたの名前を入力してください')
+p = 91
+q = 71
+n = p*q
+e = 17
+a = 87
+b = 987
 
-# ボタンを作成し、クリックされたらメッセージを表示
-if st.button('挨拶する'):
-    if user_input:  # 名前が入力されているかチェック
-        st.success(f'🌟 こんにちは、{user_input}さん! 🌟')  # メッセージをハイライト
+
+ 
+
+code_a = pow(a, e, n)
+code_b = pow(b, e, n)
+    
+def gcd(v, w):
+       while w:
+           v, w = w, v % w
+       return v
+    
+def lcm(v, w):
+       return abs(v * w) // gcd(v, w)
+    
+num1 = p-1
+num2 = q-1
+r= lcm(num1, num2)
+    
+def extended_gcd(s, t):
+    if t == 0:
+        return s, 1, 0
     else:
-        st.error('名前を入力してください。')  # エラーメッセージを表示
+        d, x, y = extended_gcd(t, s % t)
+        return d, y, x - (s // t) * y
 
-# スライダーを作成し、値を選択
-number = st.slider('好きな数字（10進数）を選んでください', 0, 100)
+def solve_linear_diophantine(s, t, u):
+    d, x, y = extended_gcd(s, t)
+    if u % d == 0:
+        x0 = x * (u // d)
+        y0 = y * (u // d)
+        if x0 >= 0:
+            return x0, y0
+        else:
+            quotient = (-x0 + abs(t) - 1) // abs(t)
+            x = x0 + quotient * (t // d)
+            y = y0 - quotient * (s // d)
+            return x, y
+    else:
+        return none
 
-# 補足メッセージ
-st.caption("十字キー（左右）でも調整できます。")
-
-# 選択した数字を表示
-st.write(f'あなたが選んだ数字は「{number}」です。')
-
-# 選択した数値を2進数に変換
-binary_representation = bin(number)[2:]  # 'bin'関数で2進数に変換し、先頭の'0b'を取り除く
-st.info(f'🔢 10進数の「{number}」を2進数で表現すると「{binary_representation}」になります。 🔢')  # 2進数の表示をハイライト
+    
+s = e
+t = -r
+u = 1
+solution = solve_linear_diophantine(s, t, u)
+if solution:
+        x, y = solution
+        print(f"整数解: x = {x}, y = {y}")
+else:
+        print('解なし')
+        
+Pa = pow(code_a,x,n)
+Pb = pow(code_b,x,n)
+print(Pa,Pb)
