@@ -5,7 +5,7 @@ import streamlit as st
 st.set_page_config(page_title="タイトル", layout="wide")
 
 # タイトルを設定
-st.title('時間計測')
+
 
 import streamlit as st
 import time
