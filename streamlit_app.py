@@ -26,7 +26,7 @@ def factorize(n):
  
 
 def main():
-    st.title("素因数分解時間計測")
+    st.title("素因数分解時間計測アプリ")
 
  
 
