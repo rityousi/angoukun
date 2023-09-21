@@ -7,14 +7,14 @@ st.set_page_config(page_title="タイトル", layout="wide")
 # タイトルを設定
 st.title('時間計測')
 
-p = int(input("素数pを入力してください"))
-q = int(input("素数qを入力してください"))
-r = int(input("素数rを入力してください"))
-g = int(input("素数gを入力してください"))
+p = 3
+q = 5
+r = 11
+g = 7
 n = p * q * r * g
-e = int(input("p,q,r,gから1引いた数と互いに素な数eを入力して下さい"))
-a = 20
-b = 27
+e = 7
+a = 29
+b = 23
 
  
 
