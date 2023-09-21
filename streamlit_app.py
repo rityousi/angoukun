@@ -31,19 +31,17 @@ def main():
 
  
 
-    number_to_factorize = st.number_input("素因数分解対象の数を入力してください:", min_value=1, value=1234567890)
+    st.write("このアプリは、与えられた整数の素因数分解を行い、所要時間を計測します。")
+
+ 
+
+    number_to_factorize = st.number_input("素因数分解対象の数を入力してください:", min_value=1)
 
  
 
     if st.button("計測開始"):
         start_time = time.time()
-
- 
-
         factors = factorize(number_to_factorize)
-
- 
-
         end_time = time.time()
         elapsed_time = end_time - start_time
 
