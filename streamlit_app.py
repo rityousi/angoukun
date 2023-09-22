@@ -4,10 +4,7 @@ import streamlit as st
 # ページ設定（タブに表示されるタイトル、表示幅）
 st.set_page_config(page_title="タイトル", layout="wide")
 
-[9:04] omzh_2906_大津颯眞
-    
 
-[9:04] omzh_2906_大津颯眞
     
 
 import streamlit as st
