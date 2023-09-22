@@ -12,7 +12,7 @@ import streamlit as st
 import time
 import math
  
-def　factorize(n):
+def factorize(n):
     factors = []
 while n %2==0:
         factors.append(2)
