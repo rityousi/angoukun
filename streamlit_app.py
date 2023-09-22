@@ -35,9 +35,9 @@ def main():
         elapsed_time = end_time - start_time
         st.write(f"素因数分解結果: {factors}")
         st.write(f"素因数分解にかかる時間: {elapsed_time:.4f} 秒")
-    if st.button("10回計測"):
+    if st.button("30回計測"):
         elapsed_times = []
-        for i in range(10):
+        for i in range(30):
             start_time = time.time()
             factors = factorize(number_to_factorize)
             end_time = time.time()
