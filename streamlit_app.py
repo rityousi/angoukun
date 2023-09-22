@@ -22,7 +22,7 @@ def factorize(n):
     return factors
 
 def main():
-    st.title("素因数分解時間計測アプリ")
+    st.title("素因数分解時間計測")
     st.write("このアプリは、与えられた整数の素因数分解を行い、所要時間を計測します。")
     number_to_factorize = st.number_input("素因数分解対象の数を入力してください:", min_value=1)
     if st.button("1回計測"):
