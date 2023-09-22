@@ -2,13 +2,11 @@
 import streamlit as st
 
 # ページ設定（タブに表示されるタイトル、表示幅）
-st.set_page_config(page_title="タイトル", layout="wide")
+st.set_page_config(page_title="素因数分解アプリ", layout="wide")
 
-
+  
     
-    
 
-import streamlit as st
 import time
 import math
  
