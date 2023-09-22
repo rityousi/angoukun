@@ -26,20 +26,15 @@ def main():
     st.write("このアプリは、与えられた整数の素因数分解を行い、所要時間を計測します。")
     number_to_factorize = st.number_input("素因数分解対象の数を入力してください:", min_value=1)
     if st.button("計測開始"):
-        start_time = time.time()
-        factors = factorize(number_to_factorize)
-        end_time = time.time()
-        elapsed_time = end_time - start_time
-        st.write(f"素因数分解結果: {factors}")
-        st.write(f"素因数分解にかかる時間: {elapsed_time:.4f} 秒")
-        elapsed_times = [elapsed_time]
-        for i in range(9):
+        elapsed_times = []
+        for i in range(10):
             start_time = time.time()
             factors = factorize(number_to_factorize)
             end_time = time.time()
             elapsed_time = end_time - start_time
             elapsed_times.append(elapsed_time)
         avg_elapsed_time = sum(elapsed_times) / len(elapsed_times)
+        st.write(f"素因数分解結果: {factors}")
         st.write(f"素因数分解にかかる平均時間: {avg_elapsed_time:.4f} 秒")
 
 if __name__ == "__main__":
