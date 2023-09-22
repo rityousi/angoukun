@@ -6,8 +6,6 @@ st.set_page_config(page_title="タイトル", layout="wide")
 
 
     
-
-[9:04] omzh_2906_大津颯眞
     
 
 import streamlit as st
