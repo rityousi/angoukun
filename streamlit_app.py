@@ -5,7 +5,6 @@ import streamlit as st
 st.set_page_config(page_title="素因数分解アプリ", layout="wide")
 
   
-    
 import time
 import math
  
