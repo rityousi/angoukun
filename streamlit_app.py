@@ -4,7 +4,8 @@ import streamlit as st
 # ページ設定（タブに表示されるタイトル、表示幅）
 st.set_page_config(page_title="素因数分解アプリ", layout="wide")
 
-  
+
+
 import time
 import math
  
