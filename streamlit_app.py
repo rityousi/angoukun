@@ -23,8 +23,11 @@ def factorize(n):
 def main():
     st.title("素因数分解時間計測アプリ")
     st.write("このアプリは、与えられた整数の素因数分解を行い、所要時間を計測します。")
-    n = st.number_input("素因数分解対象の数を入力してください:", min_value=1, max_value=3000000000)
+    n = st.number_input("素因数分解対象の数を入力してください:", min_value=1)
     if st.button("1回計測"):
+        if len(n) > 19:
+            st.error("桁数が20を超えるめ、処理できません。") 
+            st.write(n(len))
         start_time = time.time()
         factors = factorize(n)
         end_time = time.time()
