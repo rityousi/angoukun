@@ -25,20 +25,20 @@ def main():
     st.write("このアプリは、与えられた整数の素因数分解を行い、所要時間を計測します。")
     n = st.number_input("素因数分解対象の数を入力してください:", min_value=1)
     if st.button("1回計測"):
-        if len(n) > 19:
+        if len(str(n)) > 19:
             st.error("桁数が20を超えるめ、処理できません。") 
-            st.write(n(len))
-        start_time = time.time()
-        factors = factorize(n)
-        end_time = time.time()
-        elapsed_time = end_time - start_time
-        st.write(f"素因数分解結果: {factors}")
-        st.write(f"素因数分解にかかる時間: {elapsed_time:.4f}秒")
+        else:
+            start_time = time.time()
+            factors = factorize(int(n))
+            end_time = time.time()
+            elapsed_time = end_time - start_time
+            st.write(f"素因数分解結果: {factors}")
+            st.write(f"素因数分解にかかる時間: {elapsed_time:.4f}秒")
     if st.button("10回計測"):
         elapsed_times = []
         for i in range(10):
             start_time = time.time()
-            factors = factorize(n)
+            factors = factorize(int(n))
             end_time = time.time()
             elapsed_time = end_time - start_time
             elapsed_times.append(elapsed_time)
