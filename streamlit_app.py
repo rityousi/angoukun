@@ -26,7 +26,7 @@ def main():
     n = st.number_input("素因数分解対象の数を入力してください:", min_value=1)
     if st.button("1回計測"):
         if len(str(n)) > 19:
-            st.error("桁数が20を超えるめ、処理できません。") 
+            st.error("桁数が20を超えるため、処理できません。") 
         else:
             start_time = time.time()
             factors = factorize(int(n))
