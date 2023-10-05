@@ -25,9 +25,7 @@ def main():
     st.write("このアプリは、与えられた整数の素因数分解を行い、所要時間を計測します。20桁以上は正確に計算できない場合があります。")
     n = st.number_input("素因数分解対象の数を入力してください:", min_value=1)
     if st.button("1回計測"):
-        if len(str(n)) > 19:
-            st.error("桁数が20を超えるため、処理できません。") 
-        else:
+        
             start_time = time.time()
             factors = factorize(int(n))
             end_time = time.time()
